@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+
+{% block heading %} Sign up {% endblock heading %}
+
+{% block content %} 
+	<div class="postform">
+		<form action="{% url 'homeservices:userlogin' %}" enctype="multipart/form-data" method="POST">
+			{% csrf_token %}
+			{{form|crispy}}
+			<input class="btn btn-outline-success" type="submit" value="login">
+
+		</form>
+
+
+
+	</div>
+
+{% endblock content %} 

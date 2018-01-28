@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+
+{% block heading %} Category list {% endblock heading %}
+
+{% block content %} 
+
+
+
+
+<div class="row">
+	{% for x in category %}
+	<div class="col-sm-12 col-md-6 col-lg-4 item-mgn">
+		<div class="card">
+	  		<div class="card-header">
+				
+					<br> {{x.name}}
+					<br> {{x.description}}
+			</div>
+		</div>	
+	</div>
+		
+	{% endfor %}
+</div>
+
+
+{% endblock content %} 

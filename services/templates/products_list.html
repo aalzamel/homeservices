@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+
+{% block heading %} Category list {% endblock heading %}
+
+{% block content %} 
+
+
+
+
+
+<div class="row">
+  
+  	{% for x in products_list %}
+      <div class="col-sm-4">
+      <div class="card" style="width: 18rem;">
+        {% if x.image %}
+        <img class="card-img-top" src="{{x.image.url}}" alt="Card image cap">
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{x.name}}</h5>
+          <p class="card-text">{{x.description}}</p>
+          <a href="{% url 'homeservices:detail' product_name=x.name %}" class="btn btn-primary">Details</a>
+            <form action="{% url 'cart:mycart' %}" method="GET">
+              <input type="hidden" name="item" value="{{x.id}}"/>
+              <input type="hidden" class="item-qty" name="qty" value="1"/>
+              <input type="submit" class="btn btn-success" value="Add to Cart"/>
+            </form>
+
+        </div>
+      </div>
+
+
+      </div>
+  	{% endfor %}
+
+
+
+</div>
+
+
+{% endblock content %} 
+
+
+
+
+
+{% comment %}
+  
+        <div class="card" >
+          <div class="card-body">
+            {% if x.image %}
+                  <img src="{{x.image.url}}" alt="" class="detail-img-max-width">
+            {% endif %}
+            <h5 class="card-title">{{x.name}}</h5>
+            <p class="card-text">{{x.description}}</p>
+            <a href="{% url 'homeservices:detail' product_name=x.name %}" class="btn btn-primary">Details</a>
+            <a href="#" class="btn btn-primary">Add</a>
+          </div>
+        </div>
+
+{% endcomment %}
