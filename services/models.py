@@ -39,6 +39,9 @@ class Product(models.Model):
 	# return reverse("category_products", kwargs={"category_name":self.category})
 
 def create_user_profile(sender, instance, created, **kwargs):
-	send_mail('subject', 'body of the message', 'projects@home.villa-nuova.com', [instance.email])
+	send_mail('Welcome onboard '+ instance.username,
+	'we are looking forward to helping you get your home fixed '+ instance.username +'. thank you for signing up',
+	'projects@home.villa-nuova.com',
+	[instance.email])
 post_save.connect(create_user_profile, sender=User, dispatch_uid="create_user_profile")
 
