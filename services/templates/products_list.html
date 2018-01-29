@@ -22,7 +22,7 @@
           <p class="card-text">{{x.description}}</p>
           <a href="{% url 'homeservices:detail' product_name=x.name %}" class="btn btn-primary">Details</a>
             <form action="{% url 'cart:mycart' %}" method="GET">
-              <input type="hidden" name="item" value="{{x.id}}"/>
+              <input type="hidden" name="item_id" value="{{x.id}}"/>
               <input type="hidden" class="item-qty" name="qty" value="1"/>
               <input type="submit" class="btn btn-success" value="Add to Cart"/>
             </form>
