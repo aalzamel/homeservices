@@ -126,3 +126,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
+
+
+EMAIL_HOST = 'sub5.mail.dreamhost.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'home@projects.villa-nuova.com'
+EMAIL_HOST_PASSWORD = '135@Pass'
+EMAIL_USE_TLS = True

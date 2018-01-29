@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from address.models import Area, Address
+from django.core.mail import send_mail
+from django.db.models.signals import pre_save, post_save, post_delete
 # Create your models here.
 
 
@@ -36,4 +38,7 @@ class Product(models.Model):
 	# def get_absolute_url(self):
 	# return reverse("category_products", kwargs={"category_name":self.category})
 
+def create_user_profile(sender, instance, created, **kwargs):
+	send_mail('subject', 'body of the message', 'projects@home.villa-nuova.com', [instance.email])
+post_save.connect(create_user_profile, sender=User, dispatch_uid="create_user_profile")
 
