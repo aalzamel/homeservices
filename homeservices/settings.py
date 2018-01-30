@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'cart',
 ]
 
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -72,6 +75,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'homeservices.wsgi.application'
+
 
 
 # Database

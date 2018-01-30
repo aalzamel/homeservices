@@ -5,6 +5,11 @@
 
 {% block content %} 
 
+<div class="row justify-content-center">
+<div class="col col-lg-6 center">
+<table>
+  <td>
+    <tr>
 <form action="{% url 'homeservices:products' %}" method="GET">
 
 
@@ -33,7 +38,9 @@
 <input class="btn btn-primary" type="submit" value="Click me">
 
 </form>
-
+</tr></td></table>
+</div>
+</div>
 {% endblock content %} 
 
 
