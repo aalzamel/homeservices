@@ -5,7 +5,7 @@ from address.models import Area, Address
 from .forms import UserSignUp, UserLogin
 from django.db.models import Q
 from django.contrib.auth import login, logout, authenticate
-
+from .utils import send_html_mail
 # Create your views here.
 
 
@@ -88,6 +88,7 @@ def usersignup(request):
 	form = UserSignUp()
 	context['form'] = form
 
+
 	if request.method == "POST":
 		form = UserSignUp(request.POST)
 
@@ -95,11 +96,13 @@ def usersignup(request):
 			user = form.save()
 			username = user.username
 			password = user.password
-
+			email = [user.email]
 			user.set_password(password)
 			user.save()
 			auth = authenticate(username=username, password=password)
 			login(request, auth)
+			send_html_mail("Welcome onboard", "signup-email.html", email, "home@project.villa-nuova.com",user)
+
 			return redirect("homeservices:home_view")
 		messages.warning(request, form.errors)
 		return redirect("homeservices:usersignup")
