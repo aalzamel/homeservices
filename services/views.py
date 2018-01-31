@@ -6,6 +6,7 @@ from .forms import UserSignUp, UserLogin
 from django.db.models import Q
 from django.contrib.auth import login, logout, authenticate
 from .utils import send_html_mail
+from urllib.parse import quote
 # Create your views here.
 
 
@@ -113,10 +114,14 @@ def usersignup(request):
 #login form
 
 def userlogin(request):
+
 	context = {}
 	form = UserLogin()
 	context['form'] = form
 
+	if request.GET.get('original') is not None:
+		context['original'] = request.GET.get('original')
+	
 	if request.method == "POST":
 		form = UserLogin(request.POST)
 
@@ -126,6 +131,8 @@ def userlogin(request):
 			auth = authenticate(username=username, password=password)
 			if auth is not None:
 				login(request, auth)
+				if request.POST.get('original') is not None:
+					return redirect(request.POST.get('original'))
 				return redirect("homeservices:home_view")
 			messages.warning (request, 'Incorrect username/password combination')
 			return redirect("homeservices:userlogin")

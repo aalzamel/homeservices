@@ -4,8 +4,11 @@ from services.models import Product
 from django.http import JsonResponse
 
 def cart(request):
+
     if request.user.is_anonymous:
-        return redirect("services:userlogin")
+        original_url = request.GET.get('original')
+        print(original_url)
+        return redirect("/login/?original=" + original_url)
 
 
     cart, created = Cart.objects.get_or_create(user=request.user)
