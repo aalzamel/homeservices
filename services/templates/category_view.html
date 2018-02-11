@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 
 {% block heading %} Category list {% endblock heading %}
 
@@ -9,13 +9,17 @@
 
 
 <div class="row">
+
 	{% for x in category %}
-	<div class="col-sm-12 col-md-6 col-lg-4 item-mgn">
-		<div class="card">
-	  		<div class="card-header">
-				
-					<br> {{x.name}}
-					<br> {{x.description}}
+	
+	<div class="col-sm-12 col-md-4 col-lg-3">
+	
+		<div class="card pushbuttom" align="center">
+	  		<div class="card-header centerme">
+					<a href="/products/?category={{x.name}}">
+						<img src="/media/{{x.image}}" width="35%">
+					<br>{{x.name}}</a>
+					<br> <p class="centerme">{{x.description}}</p>
 			</div>
 		</div>	
 	</div>
@@ -24,4 +28,4 @@
 </div>
 
 
-{% endblock content %} 
+{% endblock content %}

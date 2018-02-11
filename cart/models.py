@@ -49,7 +49,7 @@ class Cart(models.Model):
 
 def do_delivery_and_total(sender, instance, *args, **kwargs):
     subtotal = Decimal(instance.subtotal)
-    delivery_total = Decimal(0.000)
+    delivery_total = Decimal(3.000)
     total = subtotal + delivery_total
     instance.delivery_total = "%.3f"%delivery_total
     instance.total = "%.3f"%total

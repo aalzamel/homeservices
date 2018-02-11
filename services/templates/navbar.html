@@ -1,35 +1,35 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light nav-bar-bottom-mgn">
-  <a class="navbar-brand" href="#">Home Services</a>
+<nav class="navbar navbar-expand-lg uppermargin navbarstyle">
+  <h3 class="navbarlogo black capitalize">baitna</h3><h3 class="navbarlogo uppercase white">Services</h3>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item active navbarfonts leftpush white">
         <a class="nav-link" href="{% url 'homeservices:home_view' %}">Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'homeservices:category_view' %}">Categories</a>
+        <a class="nav-link navbarfonts" href="{% url 'homeservices:category_view' %}">Categories</a>
       </li>
 
     </ul>
 
       {% if request.user.is_authenticated %}
-      <li class="nav-item form-inline">
+      <li class="nav-item form-inline white">
         <a class="nav-link" href="{% url 'homeservices:userlogout' %}">logout</a>
       </li>
       {% else %}
-      <li class="nav-item form-inline">
+      <li class="nav-item form-inline white">
         <a class="nav-link" href="{% url 'homeservices:userlogin' %}">login</a>
       </li>
-      <li class="nav-item form-inline">
+      <li class="nav-item form-inline white">
         <a class="nav-link" href="{% url 'homeservices:usersignup' %}">signup</a>
       </li>
       {% endif %}
       {% if request.user.is_authenticated %}
       <li class="nav-item form-inline">
-        <small><a class="nav-link disabled" href="#">logged in as: {{request.user}}</a></small>
+        <small><a class="loggedornot disabled" href="#">logged in as: {{request.user}}</a></small>
       </li>        
       {% endif %}
  

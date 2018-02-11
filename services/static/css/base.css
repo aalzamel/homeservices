@@ -1,0 +1,100 @@
+.centerme {
+
+    text-align: center;
+    color: black;
+
+}
+
+.pagecolor {
+	background-color: #ecf0f1;
+}
+.uppermargin {
+	margin-top: 20px;
+		padding-top: 60px;
+	padding-bottom: 15px;
+}
+.navbarstyle {
+	background-color: #e67e22;
+	color: #2c3e50;
+}
+
+a, a:hover {
+ 	color: black;
+ 	font-weight: bold;
+}
+
+.navbarfonts {
+	text-transform: capitalize;
+	font-weight: bold;
+	font-family: Verdana, Geneva, sans-serif;
+}
+.leftpush {
+
+	margin-left: 15%;
+}
+.navbarlogo {
+	font-family: Verdana, Geneva, sans-serif;	
+	font-size: 24px;
+	font-weight: bold;
+}
+.capitalize {
+		text-transform: capitalize;
+	
+}
+
+.uppercase {
+	text-transform: uppercase;
+
+}
+.loggedornot {
+	text-transform: lowercase;
+	color: black;
+
+}
+
+.white {
+	color: white!important;
+}
+
+.black {
+	color: #2c3e50;
+}
+
+.pushbuttom {
+
+margin-bottom: 40px;
+border-color: transparent;
+
+}
+
+.gobutton {
+	background-color: #2c3e50;
+	border-color: #2c3e50;
+	width: 100%;
+	margin-top: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+}
+
+.details {
+	background-color: #2c3e50;
+	border-color: #2c3e50;
+	width: 100%;
+	margin-top: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+}
+
+
+.addcart {
+	background-color: #2c3e50;
+	color: white;
+	border-color: #2c3e50;
+	width: 100%;
+	margin-top: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+}

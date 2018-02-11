@@ -49,6 +49,7 @@ def products(request):
 				products_list = Product.objects.all()
 
 
+
 	# if category is not None:
 	# 	if area is not None:
 	# 		products_list = Product.objects.filter(category__name=category, area__name=area)
@@ -118,7 +119,6 @@ def userlogin(request):
 	context = {}
 	form = UserLogin()
 	context['form'] = form
-
 	if request.GET.get('original') is not None:
 		context['original'] = request.GET.get('original')
 	

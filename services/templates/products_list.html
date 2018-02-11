@@ -7,25 +7,25 @@
 
 
 
+<center>
 
-
-<div class="row">
+<div class="row" style="padding-bottom: 10px;">
   
   	{% for x in products_list %}
       <div class="col-sm-4">
-      <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 90%; height: 100%; padding-bottom: 10px;">
         {% if x.image %}
         <img class="card-img-top" src="{{x.image.url}}" alt="Card image cap">
         {% endif %}
         <div class="card-body">
           <h5 class="card-title">{{x.name}}</h5>
           <p class="card-text">{{x.description}}</p>
-          <a href="{% url 'homeservices:detail' product_name=x.name %}" class="btn btn-primary">Details</a>
+          <a href="{% url 'homeservices:detail' product_name=x.name %}" class="btn addcart">Details</a>
             <form action="{% url 'cart:mycart' %}" method="GET">
               <input type="hidden" name="item_id" value="{{x.id}}"/>
               <input type='hidden' name='original' value='{{ request.path }}'/>
               <input type="hidden" class="item-qty" name="qty" value="1"/>
-              <input type="submit" class="btn btn-success" value="Add to Cart"/>
+              <input type="submit" class="btn addcart" value="Add to Cart"/>
             </form>
 
         </div>
@@ -38,7 +38,7 @@
 
 
 </div>
-
+</center>
 
 {% endblock content %} 
 
